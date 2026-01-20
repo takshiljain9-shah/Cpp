@@ -18,5 +18,10 @@ class student{
 };
 
 int main(){
-    
+    student s1;
+
+    s1.setDetails("Takshil", 9.2);
+    s1.display();
+
+    return 0;
 }
