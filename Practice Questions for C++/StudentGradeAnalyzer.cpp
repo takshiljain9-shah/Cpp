@@ -62,8 +62,8 @@ int main(){
 
             default:
             cout << "Invalid choice! Try again" << endl;
-        }
-        while (choice != 4);
+        }      
     }
+    while (choice != 4);
     return 0;
 }
