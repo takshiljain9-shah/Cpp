@@ -69,5 +69,11 @@ int main(){
     myProfile->addTech("Linux");
     myProfile->addTech("Academics");
 
-    
+    SocialLink[5] = {
+        {"GitHUB", "//the links"},
+        {"LinkedIN", "//the links"},
+        {"LeetCode", "//the links"},
+        {"Instagram", "//the links"},
+        {"X", "//the links"},
+    };
 }
