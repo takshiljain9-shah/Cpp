@@ -76,4 +76,14 @@ int main(){
         {"Instagram", "//the links"},
         {"X", "//the links"},
     };
+
+    int solved = 1;
+    int target = 300;
+    float progress = (float)solved / target * 100.0f;
+
+    bool sessionActive = true;
+    while(sessionActive){
+        cout << "\n[1] View Identity\n[2] Social Links\n[3] Progress Tracker\n[4] Exit/select:";
+        int c
+    }
 }
