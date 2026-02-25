@@ -63,4 +63,11 @@ int main(){
     cin >> visitorFirst >> visitorLast;
     string fullVisitor = visitorFirst + " " + visitorLast;
     cout << "\nAccess Granted. Welcome, " << fullVisitor << ". " << endl;
+
+    Portfolio* myProfile = new Portfolio("C++ Mastery & DSA ", 8.5);
+    myProfile->addTech("C++");
+    myProfile->addTech("Linux");
+    myProfile->addTech("Academics");
+
+    
 }
