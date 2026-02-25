@@ -24,4 +24,43 @@ class Portfolio{
     string currentFocus;
     double logicScore;
     vector<string> stack;
+
+    public:
+    Portfolio(string focus, double score) : currentFocus(focus), logicScore(score){}
+
+    void updateFocus(const string& newFocus){
+        currentFocus = newFocus;
+        cout << "[System]: Focus updated to " << currentFocus << endl;
+    }
+    void addTech(string tech){
+        stack.push_back(tech);
+    }
+    friend void brandAudit(Portfolio& p);
+
+    void showStack(){
+        cout << "Current Tech Stack: ";
+        for (const string& s: stack){
+            if(s == "Legacy") 
+            continue;
+            cout << "[" << s << "]";
+        }
+        cout << endl;
+    }
+};
+
+void brandAudit(Portfolio& p){
+    cout << "\n>>> Running Brand Audit for: " << UserName << endl;
+    cout << ">>> Current Logic Stability: " << p.logicScore << "/10.0" << endl;
+}
+
+int main(){
+    printline();
+    cout << " " << userName << " | DIGITAL RESUME v2.0" << endl;
+    printline();
+
+    string visitorFirst, visitorLast;
+    cout << "Enter visitor name : ";
+    cin >> visitorFirst >> visitorLast;
+    string fullVisitor = visitorFirst + " " + visitorLast;
+    cout << "\nAccess Granted. Welcome, " << fullVisitor << ". " << endl;
 }
