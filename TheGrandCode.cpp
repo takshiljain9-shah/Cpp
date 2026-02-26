@@ -61,6 +61,7 @@ int main(){
     string visitorFirst, visitorLast;
     cout << "Enter visitor name : ";
     cin >> visitorFirst >> visitorLast;
+    cin.ignore(1000, '\n');
     string fullVisitor = visitorFirst + " " + visitorLast;
     cout << "\nAccess Granted. Welcome, " << fullVisitor << ". " << endl;
 
@@ -95,7 +96,7 @@ int main(){
 
             case 2:
             cout << "\n--- Live Social Profiles ---" << endl;
-            for (int i = 0; i < 2; i++){
+            for (int i = 0; i < 6; i++){
                 cout << links[i].platform << ": " << links[i].url << endl;
             }
             break;
