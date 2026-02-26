@@ -87,6 +87,40 @@ int main(){
         int choice;
         cin >> choice;
 
-        
+        switch(choice){
+            case 1:
+            cout << "\nIdentity: " << UserName << " | B.Tech CSE" << endl;
+            myProfile->showStack();
+            break;
+
+            case 2:
+            cout << "\n--- Live Social Profiles ---" << endl;
+            for (int i = 0; i < 2; i++){
+                cout << SocialLinks[i].platform << ": " << links[i].url << endl;
+            }
+            break;
+
+            case 3:
+            cout << fixed << setprecision(2);
+            cout << "\nLeetcode Progress: " << progress << "%" << endl;
+            cout << "Momentum Factor: " << sqrt(solved * 10) << endl;
+            break;
+
+            case 4:
+            cout << "Termination session..." << endl;
+            sessionActive = false;
+            break;
+            
+            default:
+            cout << "Invalid Input." << endl;
+            break;
+        }
+        if(!sessionActive)
+        break;
     }
+
+    brandAudit(*myProfile);
+
+    delete myProfile;
+    return 0;
 }
