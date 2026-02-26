@@ -55,7 +55,7 @@ void brandAudit(Portfolio& p){
 
 int main(){
     printline();
-    cout << " " << userName << " | DIGITAL RESUME v2.0" << endl;
+    cout << " " << UserName << " | DIGITAL RESUME v2.0" << endl;
     printline();
 
     string visitorFirst, visitorLast;
@@ -69,7 +69,7 @@ int main(){
     myProfile->addTech("Linux");
     myProfile->addTech("Academics");
 
-    SocialLink[5] = {
+    SocialLink links[5] = {
         {"GitHUB", "//the links"},
         {"LinkedIN", "//the links"},
         {"LeetCode", "//the links"},
@@ -96,7 +96,7 @@ int main(){
             case 2:
             cout << "\n--- Live Social Profiles ---" << endl;
             for (int i = 0; i < 2; i++){
-                cout << SocialLinks[i].platform << ": " << links[i].url << endl;
+                cout << links[i].platform << ": " << links[i].url << endl;
             }
             break;
 
