@@ -26,6 +26,12 @@ class student{
         cout << endl;
     }
     inline int totalMarks(){
-        return marks[0] + 
+        return marks[0] + marks[1] + marks[2];
     }
+    friend float calculateAverage(student s);
+};
+
+float calculateAverage(student s){
+    return s.totalMarks() / 3.0;
 }
+
