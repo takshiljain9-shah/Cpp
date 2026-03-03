@@ -35,3 +35,20 @@ float calculateAverage(student s){
     return s.totalMarks() / 3.0;
 }
 
+int main(){
+    student s1;
+
+    s1.getData();
+    s1.displayData();
+
+    cout << "Total Marks: " << s1.totalMarks() << endl;
+
+    float avg = calculateAverage(s1);
+    cout << "Average Marks: " << avg << endl;
+
+    string message = "Welcome";
+    cout << "\nString length of '" << message << "' is: " << message.length() << endl;
+
+    cout << "Program completed successfully." << endl;
+    return 0;
+}
