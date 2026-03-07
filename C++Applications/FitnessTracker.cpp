@@ -41,19 +41,32 @@ class FitnessTracker{
 void steps(FitnessTracker obj){
     float avg;
 
-    avg =  / 3.0;
+    avg = obj.TotalSteps() / 3.0;
+
+    cout << "Average steps are: " << avg << endl;
 
     if(avg > 5000){
         cout << "Exercise Level: Very Active." << endl;
-    }else if(avg > 3000 || avg < 5000){
+    }else if(avg > 3000 && avg < 5000){
         cout << "Exercise Level: Moderate." << endl;
     }else if(avg < 3000){
         cout << "Exercise Level: Low." << endl;
     }else{
         cout << "Inappropriate value." << endl;
     }
+
+    cout << "Length of the name is : " << obj.Name.length() << endl;
 }
 
 int main(){
-    
+    FitnessTracker steps1;
+
+    steps1.getData();
+    steps1.displayData();
+
+    cout << "Total steps done with 3 workouts: " << steps1.TotalSteps() << endl;
+
+    steps(steps1);
+
+    return 0;
 }
