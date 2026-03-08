@@ -20,13 +20,13 @@ class FitnessTracker{
     }
 
     void displayData(){
-        cout << "====Fitness Tracker====" << endl;
+        cout << "\n====Fitness Tracker====" << endl;
 
         cout << "User Name: " << Name << endl;
 
         cout << "Steps done from three different workouts: ";
         for(int i = 0; i < 3; i++){
-            cout << steps[i];
+            cout << steps[i] << " ";
         }
         cout << endl;
     }
