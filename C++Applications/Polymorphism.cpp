@@ -4,7 +4,7 @@ using namespace std;
 class shape{
     public:
     virtual void draw(){
-        cout << "Drawing a shape: " << endl;
+        cout << "Drawing a shape. " << endl;
     }
 };
 
