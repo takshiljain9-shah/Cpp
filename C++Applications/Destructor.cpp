@@ -30,7 +30,7 @@ public:
     }
 
     void getData() {
-        cin >> Fullname;
+        getline(cin , Fullname);
         for (int i = 0; i < 3; i++) cin >> marks[i];
     }
 
