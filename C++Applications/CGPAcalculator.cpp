@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <limits>
 
 using namespace std;
 
@@ -15,6 +16,7 @@ class Person{
         string code;
 
         cout << "Enter your name: " << endl;
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
         getline(cin , name);
 
         cout << "Enter your admission year:  " << endl;
@@ -40,7 +42,6 @@ class Person{
 class Student : public Person{
     private:
     int n;
-    int subjects[100];
     int marks[100];
     int credits[100];
     vector<string> subjectname;
@@ -48,12 +49,9 @@ class Student : public Person{
     public:
     void getData(){
         data();
-        display();
 
-        cout << "Enter number of subjects: ";
-        for (int i = 0; i < 100; i++){
-            cin >> subjects[i];
-        }
+        cout << "Enter number of subjects: " << endl;
+        cin >> n;
         subjectname.resize(n); 
 
         cout << "Enter subject names: " << endl;
@@ -73,27 +71,15 @@ class Student : public Person{
     }
 
     void displaydata(){
-        cout << "Number of subjects: ";
-        for (int i = 0; i < 100; i++){
-            cout << subjects[i] << " ";
-        }
+        cout << "==== SUBJECT DETAILS ====" << endl;
 
-        cout << "Subject names: ";
         for (int i = 0; i < n; i++){
-            cout << subjectname[i];
-        }
-
-        cout << "Marks for each subject: ";
-        for (int i = 0; i < n; i++){
-            cout << subjects[i] << " " << subjectname[i] << " " << marks[i] << endl;
-        }
-
-        cout << "Credits for each subject: ";
-        for (int i = 0; i < n; i++){
-            cout << subjects[i] << " " << subjectname[i] << " " << credits[i] << endl;
+            cout << "Subject: " << subjectname[i]
+                 << " | Marks: " << marks[i]
+                 << " | Credits: " << credits[i]
+                 << endl;
         }
     }
-
     inline int TotalCredits(){
         int sum = 0;
         for (int i = 0; i < n; i++){
@@ -108,7 +94,7 @@ class Student : public Person{
 void calculateSGPA(Student s){
     float SGPA;
 
-    int totalCredits = s.TotalCredits();
+    int totalWeightedPoints = 0;
 
     for (int i = 0; i < s.n; i++){
         int gradepoint;
@@ -126,10 +112,12 @@ void calculateSGPA(Student s){
         else
         gradepoint = 0;
 
-        totalCredits += gradepoint * s.credits[i];
+        totalWeightedPoints += gradepoint * s.credits[i];
     }
 
-    SGPA = totalCredits / s.TotalCredits();
+    SGPA = totalWeightedPoints / s.TotalCredits();
+
+    cout << "SGPA of " << s.name << " is " << SGPA << endl;
 
     if(SGPA >= 9)
     cout << "Performance: Outstanding." << endl;
@@ -155,6 +143,8 @@ int main(){
     p->display();
 
     s1.displaydata();
+
+    calculateSGPA(s1);
 
     return 0;
 }
